@@ -1,0 +1,106 @@
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+
+WindUI:AddTheme({
+    Name = "My Theme", -- theme name
+    
+    Accent = Color3.fromHex("#18181b"),
+    Background = Color3.fromHex("#101010"), -- Accent
+    Outline = Color3.fromHex("#808080"),
+    Text = Color3.fromHex("#FFFFFF"),
+    Placeholder = Color3.fromHex("#7a7a7a"),
+    Button = Color3.fromHex("#52525b"),
+    Icon = Color3.fromHex("#a1a1aa"),
+})
+
+local Window = WindUI:CreateWindow({
+    Title = "My Super Hub",
+    Icon = "door-open",
+    Author = "by .ftgs and .ftgs",
+    Size = UDim2.fromOffset(780, 460),
+    Theme = "My Theme",
+    Transparent = true,
+    BackgroundImageTransparency = 0.52,
+    HideSearchBar = false
+})
+
+Window:DisableTopbarButtons({
+    "Fullscreen"
+})
+
+Window:EditOpenButton({
+    Title = "Open Example UI",
+    Icon = "monitor",
+    CornerRadius = UDim.new(0,16),
+    StrokeThickness = 2.25,
+    Color = ColorSequence.new( -- gradient
+        Color3.fromHex("FF0F7B"), 
+        Color3.fromHex("F89B29")
+    ),
+    OnlyMobile = false,
+    Enabled = true,
+    Draggable = true,
+})
+
+local Tab1 = Window:Tab({
+    Title = "Grow A Garden",
+    Icon = "sprout", -- optional
+    Locked = false,
+})
+
+local Paragraph = Tab1:Paragraph({
+    Title = "Grow A Garden script",
+    Desc = "choose your script Grow A Garden",
+    Color = "Blue",
+    Image = "",
+    ImageSize = 30,
+    Thumbnail = "",
+    ThumbnailSize = 80,
+    Locked = false
+})
+
+local Dropdown = Tab1:Dropdown({
+    Title = "choose script",
+    Values = {
+        {
+            Title = "speed hub x",
+            Desc = "key system",
+            Icon = "mouse-pointer-click",
+            Callback = function() 
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+            end
+        },
+        {
+            Title = "wish hub",
+            Desc = "keyless",
+            Icon = "mouse-pointer-click",
+            Callback = function() 
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/dy1zn4t/WisHubX/refs/heads/main/loader"))()
+            end
+        },
+        {
+            Title = "Lunor",
+            Desc = "key system",
+            Icon = "mouse-pointer-click",
+            Callback = function() 
+                loadstring(game:HttpGet('https://lunor.dev/loader'))()
+            end
+        },
+        {
+            Title = "Lumin",
+            Desc = "key system",
+            Icon = "mouse-pointer-click",
+            Callback = function() 
+                loadstring(game:HttpGet("http://luminon.top/loader.lua"))()
+            end
+        },
+                {
+            Title = "Thunders hub",
+            Desc = "key system",
+            Icon = "mouse-pointer-click",
+            Callback = function() 
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/ThunderZ-HUB/HUB/main/Script"))()
+            end
+        },
+    }
+})
+    
